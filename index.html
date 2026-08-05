@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GettingBooked | Marketing for Longevity Clinics</title>
+  <meta name="description" content="GettingBooked helps longevity clinics attract more qualified patients, improve follow-up, and turn more inquiries into booked consultations." />
+  <style>
+    :root{
+      --bg:#f6fbf9;
+      --surface:#ffffff;
+      --text:#17332d;
+      --muted:#61756f;
+      --primary:#1d7a68;
+      --primary-dark:#12594d;
+      --accent:#dff4ec;
+      --line:#dce9e4;
+      --shadow:0 18px 50px rgba(27,75,64,.10);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#f4fbf8 0%,#ffffff 55%,#f8fbfa 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(220,233,228,.8);
+    }
+    nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{font-size:1.25rem;font-weight:800;letter-spacing:-.02em}
+    .brand span{color:var(--primary)}
+    .navlinks{display:flex;gap:24px;align-items:center;color:var(--muted);font-size:.95rem}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:13px 20px;border-radius:999px;
+      background:var(--primary);color:#fff;font-weight:700;
+      box-shadow:0 10px 25px rgba(29,122,104,.22);
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-2px);background:var(--primary-dark)}
+    .btn.secondary{
+      background:#fff;color:var(--primary);border:1px solid var(--line);box-shadow:none
+    }
+    .hero{padding:82px 0 64px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}
+    .eyebrow{
+      display:inline-block;padding:8px 12px;border-radius:999px;
+      background:var(--accent);color:var(--primary-dark);
+      font-size:.84rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase
+    }
+    h1{font-size:clamp(2.6rem,6vw,5.1rem);line-height:1.02;margin:18px 0 22px;letter-spacing:-.05em}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:640px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;color:var(--muted);font-size:.92rem}
+    .visual{
+      background:radial-gradient(circle at top right,#b7ead9,transparent 40%),linear-gradient(145deg,#ffffff,#eaf7f2);
+      border:1px solid var(--line);border-radius:34px;padding:28px;box-shadow:var(--shadow);
+    }
+    .dashboard{background:#fff;border-radius:26px;padding:24px;border:1px solid var(--line)}
+    .metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+    .metric{padding:18px;border-radius:18px;background:#f5faf8;border:1px solid #e3efea}
+    .metric strong{display:block;font-size:1.75rem;color:var(--primary-dark)}
+    .bar{height:10px;border-radius:999px;background:#e6f1ed;overflow:hidden;margin-top:10px}
+    .bar i{display:block;height:100%;background:var(--primary);border-radius:999px}
+    section{padding:74px 0}
+    .section-head{max-width:720px;margin-bottom:34px}
+    .section-head h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;margin:10px 0 14px;letter-spacing:-.035em}
+    .section-head p{color:var(--muted);font-size:1.06rem}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{
+      background:var(--surface);padding:26px;border-radius:var(--radius);
+      border:1px solid var(--line);box-shadow:0 10px 30px rgba(24,71,60,.06)
+    }
+    .icon{
+      width:46px;height:46px;border-radius:14px;background:var(--accent);
+      display:grid;place-items:center;font-size:1.25rem;margin-bottom:18px
+    }
+    .card h3{margin:0 0 8px;font-size:1.15rem}
+    .card p{margin:0;color:var(--muted)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:var(--shadow)}
+    .checklist{display:grid;gap:14px;margin-top:22px}
+    .check{display:flex;gap:12px;align-items:flex-start}
+    .check b{color:var(--primary)}
+    .steps{display:grid;gap:16px}
+    .step{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start}
+    .num{width:48px;height:48px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:800}
+    .cta{background:linear-gradient(135deg,#174f44,#1d7a68);color:#fff;border-radius:34px;padding:48px}
+    .cta p{color:#d9eee7;max-width:680px}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+    input, textarea{
+      width:100%;padding:15px 16px;border-radius:14px;border:1px solid #cfe1da;
+      font:inherit;background:#fff;color:var(--text)
+    }
+    textarea{grid-column:1/-1;min-height:130px;resize:vertical}
+    .full{grid-column:1/-1}
+    button{border:0;cursor:pointer}
+    footer{padding:34px 0;color:var(--muted);font-size:.92rem}
+    .footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:900px){
+      .hero-grid,.split{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .navlinks a:not(.btn){display:none}
+    }
+    @media(max-width:640px){
+      .cards{grid-template-columns:1fr}
+      form{grid-template-columns:1fr}
+      input, textarea, .full{grid-column:1}
+      .hero{padding-top:58px}
+      h1{font-size:2.8rem}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">Getting<span>Booked</span></div>
+      <div class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#process">Process</a>
+        <a class="btn" href="#contact">Book a Call</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Marketing for Longevity Clinics</span>
+        <h1>More qualified patients. More booked consultations.</h1>
+        <p>
+          GettingBooked helps longevity, preventive health, hormone, weight management,
+          and concierge medicine clinics turn more website visitors and inquiries into real appointments.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#contact">Get a Free Growth Review</a>
+          <a class="btn secondary" href="#services">See Our Services</a>
+        </div>
+        <div class="trust">
+          <span>Biotech-informed communication</span>
+          <span>AI follow-up systems</span>
+          <span>Patient-focused marketing</span>
+        </div>
+      </div>
+
+      <div class="visual">
+        <div class="dashboard">
+          <small style="color:var(--muted)">Clinic Growth Snapshot</small>
+          <h3 style="margin:6px 0 0">From inquiry to booked consultation</h3>
+          <div class="metric-grid">
+            <div class="metric"><span>New leads</span><strong>126</strong><div class="bar"><i style="width:78%"></i></div></div>
+            <div class="metric"><span>Booked calls</span><strong>43</strong><div class="bar"><i style="width:58%"></i></div></div>
+            <div class="metric"><span>Missed calls recovered</span><strong>18</strong><div class="bar"><i style="width:66%"></i></div></div>
+            <div class="metric"><span>Follow-ups sent</span><strong>312</strong><div class="bar"><i style="width:88%"></i></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What We Do</span>
+        <h2>Simple systems that help clinics get found and get booked.</h2>
+        <p>We focus on the part that matters most: bringing in the right patients and making sure your team does not lose them.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="icon">✦</div><h3>Website & Landing Pages</h3><p>Clear, modern pages that explain your services and guide visitors toward booking.</p></div>
+        <div class="card"><div class="icon">◎</div><h3>Google Ads</h3><p>High-intent campaigns for services such as hormone optimization, executive health, and weight management.</p></div>
+        <div class="card"><div class="icon">↗</div><h3>Local SEO & Reviews</h3><p>Improve local visibility and build trust with a stronger Google presence and review system.</p></div>
+        <div class="card"><div class="icon">☎</div><h3>AI Phone & Missed-Call Text</h3><p>Respond faster, answer common questions, and recover leads after missed calls.</p></div>
+        <div class="card"><div class="icon">✉</div><h3>Email & SMS Follow-Up</h3><p>Automated follow-up for new leads, consultation reminders, and patients who are not ready yet.</p></div>
+        <div class="card"><div class="icon">◌</div><h3>CRM & Appointment Automation</h3><p>Keep inquiries organized and move each lead toward the right next step.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container split">
+      <div class="panel">
+        <span class="eyebrow">Why GettingBooked</span>
+        <h2 style="font-size:2.4rem;line-height:1.1">Marketing that understands both science and patient concerns.</h2>
+        <p style="color:var(--muted)">
+          Longevity clinics need more than attractive ads. Patients want clear information,
+          trust, and confidence before they book. Our scientific and biotech background helps us
+          understand complex services and explain them in a clear, responsible way.
+        </p>
+        <div class="checklist">
+          <div class="check"><b>✓</b><span>We understand technical and science-based services.</span></div>
+          <div class="check"><b>✓</b><span>We avoid exaggerated claims and confusing language.</span></div>
+          <div class="check"><b>✓</b><span>We build follow-up systems, not just ads.</span></div>
+          <div class="check"><b>✓</b><span>We focus on qualified consultations, not empty traffic.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-head" style="margin-bottom:20px">
+          <span class="eyebrow">Best Fit</span>
+          <h2>Who we help</h2>
+        </div>
+        <div class="cards" style="grid-template-columns:1fr 1fr">
+          <div class="card"><h3>Longevity Clinics</h3><p>Biomarkers, personalized plans, prevention, and healthy aging.</p></div>
+          <div class="card"><h3>Hormone Clinics</h3><p>TRT, menopause care, and hormone optimization services.</p></div>
+          <div class="card"><h3>Weight Management</h3><p>Medical weight loss and GLP-1 patient acquisition.</p></div>
+          <div class="card"><h3>Concierge Medicine</h3><p>Executive health, memberships, and high-value preventive care.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Our Process</span>
+        <h2 style="font-size:2.5rem;line-height:1.1">A clear path from first click to booked consultation.</h2>
+        <p style="color:var(--muted)">We review your current patient journey, fix the biggest gaps, and build a system your clinic can use every day.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><h3>Review</h3><p>We check your website, Google presence, follow-up, and booking process.</p></div></div>
+        <div class="step"><div class="num">2</div><div><h3>Build</h3><p>We improve your pages, messaging, campaigns, and automation.</p></div></div>
+        <div class="step"><div class="num">3</div><div><h3>Launch</h3><p>We connect your lead flow and help your team respond faster.</p></div></div>
+        <div class="step"><div class="num">4</div><div><h3>Optimize</h3><p>We track what brings real consultations and improve from there.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="cta">
+        <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff">Free Clinic Growth Review</span>
+        <h2 style="font-size:clamp(2rem,4vw,3.3rem);line-height:1.1;margin:16px 0">Let’s find where your clinic is losing potential patients.</h2>
+        <p>Send your website and a few details. We will review your online presence and identify the most important opportunities to improve bookings.</p>
+        <form action="mailto:jie@gettingbooked.net" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <input type="text" name="clinic" placeholder="Clinic name">
+          <input type="url" name="website" placeholder="Clinic website">
+          <textarea name="message" placeholder="What service do you want to grow?"></textarea>
+          <button class="btn full" type="submit">Request My Free Review</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><strong>GettingBooked</strong><br>Marketing for longevity clinics</div>
+    <div>Jie Chen · jie@gettingbooked.net · www.gettingbooked.net</div>
+  </div>
+</footer>
+</body>
+</html>
