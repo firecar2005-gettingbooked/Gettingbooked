@@ -3,40 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GettingBooked helps longevity clinics grow with clear strategy, modern websites, AI follow-up, video, and compliance-aware marketing." />
+  <meta name="description" content="GettingBooked helps longevity clinics grow with websites, AI follow-up, Google, video, CRM, and compliance-aware marketing." />
   <title>GettingBooked | Growth for Longevity Clinics</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
+      --bg:#f7f3ee;
+      --card:#fcfaf7;
       --black:#111111;
-      --muted:#666666;
-      --line:#e8e8e8;
-      --blue:#183b66;
-      --soft:#f7f8fa;
+      --muted:#6f6f6f;
+      --line:#dfd8d0;
+      --blue:#173f6b;
       --white:#ffffff;
       --radius:22px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:Inter,Arial,sans-serif;
       color:var(--black);
-      background:var(--white);
+      background:var(--bg);
       line-height:1.6;
     }
 
     a{text-decoration:none;color:inherit}
+    button,input,textarea{font:inherit}
     .container{width:min(1180px,92%);margin:auto}
 
     header{
       position:sticky;
       top:0;
-      z-index:20;
-      background:rgba(255,255,255,.94);
+      z-index:50;
+      background:rgba(247,243,238,.94);
       backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
     }
@@ -46,20 +51,21 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
+      gap:30px;
     }
 
     .logo{
       font-family:Manrope,sans-serif;
-      font-size:1.35rem;
+      font-size:1.28rem;
       font-weight:800;
-      letter-spacing:-.04em;
+      letter-spacing:-.045em;
     }
 
     nav{
       display:flex;
       align-items:center;
       gap:28px;
-      font-size:.95rem;
+      font-size:.92rem;
       font-weight:500;
     }
 
@@ -67,11 +73,14 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:13px 21px;
+      min-height:46px;
+      padding:0 22px;
+      border:none;
       border-radius:999px;
       background:var(--black);
       color:#fff;
       font-weight:600;
+      cursor:pointer;
       transition:.2s ease;
     }
 
@@ -81,79 +90,80 @@
     }
 
     .hero{
-      padding:82px 0 70px;
+      padding:82px 0 66px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.02fr .98fr;
-      gap:64px;
+      grid-template-columns:1.1fr .9fr;
+      gap:80px;
       align-items:center;
     }
 
     .eyebrow{
-      font-size:.82rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      font-weight:700;
+      margin-bottom:18px;
       color:var(--blue);
-      margin-bottom:20px;
+      font-size:.8rem;
+      font-weight:700;
+      letter-spacing:.17em;
+      text-transform:uppercase;
     }
 
     h1,h2,h3{
-      font-family:Manrope,sans-serif;
       margin:0;
-      letter-spacing:-.045em;
+      font-family:Manrope,sans-serif;
       line-height:1.05;
+      letter-spacing:-.05em;
     }
 
     h1{
-      font-size:clamp(3.2rem,6vw,6.6rem);
-      max-width:760px;
+      max-width:700px;
+      font-size:clamp(3.4rem,7vw,7.2rem);
     }
 
-    .hero p{
-      color:var(--muted);
-      font-size:1.12rem;
+    .hero-copy{
       max-width:610px;
       margin:24px 0 30px;
+      color:var(--muted);
+      font-size:1.1rem;
     }
 
     .hero-actions{
       display:flex;
-      gap:14px;
+      gap:18px;
+      align-items:center;
       flex-wrap:wrap;
     }
 
     .text-link{
-      display:inline-flex;
-      align-items:center;
-      padding:13px 4px;
+      font-size:.9rem;
       font-weight:600;
-      border-bottom:1px solid var(--black);
+      text-decoration:underline;
+      text-underline-offset:4px;
     }
 
-    .hero-image{
-      min-height:600px;
-      border-radius:30px;
-      background:
-        linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.12)),
-        url('https://images.unsplash.com/photo-1666887361009-a6f7afc9f7d5?auto=format&fit=crop&w=2200&q=95') center/cover;
+    .hero-note{
+      max-width:320px;
+      padding-left:30px;
+      border-left:1px solid var(--line);
+      color:#4e4e4e;
+      font-size:1rem;
     }
 
-    .strip{
+    .specialties{
       border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
-      padding:24px 0;
     }
 
-    .strip-inner{
+    .specialty-list{
+      min-height:78px;
       display:flex;
+      align-items:center;
       justify-content:space-between;
-      gap:18px;
+      gap:20px;
       flex-wrap:wrap;
-      color:#444;
-      font-size:.95rem;
+      color:#454545;
+      font-size:.9rem;
       font-weight:600;
     }
 
@@ -163,70 +173,78 @@
 
     .section-head{
       max-width:760px;
-      margin-bottom:44px;
+      margin-bottom:46px;
     }
 
     .section-head h2{
-      font-size:clamp(2.4rem,4vw,4.4rem);
-      margin-bottom:18px;
+      font-size:clamp(2.5rem,4.5vw,4.8rem);
+      margin-bottom:15px;
     }
 
     .section-head p{
+      margin:0;
       color:var(--muted);
-      font-size:1.06rem;
-      max-width:650px;
+      font-size:1.02rem;
     }
 
-    .grid-3{
+    .services{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:18px;
+      gap:34px 28px;
     }
 
-    .card{
-      border-top:1px solid var(--black);
-      padding:26px 0 10px;
+    .service{
+      padding-top:18px;
+      border-top:1px solid #a9a39d;
     }
 
-    .card h3{
-      font-size:1.35rem;
-      margin-bottom:10px;
+    .service-icon{
+      width:34px;
+      height:34px;
+      margin-bottom:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.45rem;
     }
 
-    .card p{
-      color:var(--muted);
+    .service h3{
+      margin-bottom:8px;
+      font-size:1.25rem;
+    }
+
+    .service p{
       margin:0;
+      color:var(--muted);
+      font-size:.95rem;
     }
 
-    .feature{
-      background:var(--soft);
-    }
-
-    .split{
+    .founder-card{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:70px;
-      align-items:start;
+      gap:72px;
+      padding:44px;
+      border:1px solid #eee6dd;
+      border-radius:var(--radius);
+      background:rgba(252,250,247,.72);
     }
 
-    .quote{
-      font-family:Manrope,sans-serif;
-      font-size:clamp(2rem,3vw,3.2rem);
-      line-height:1.18;
-      letter-spacing:-.04em;
-      margin:0;
+    .founder-card h2{
+      max-width:510px;
+      font-size:clamp(2.2rem,3.5vw,3.8rem);
     }
 
-    .copy p{
+    .founder-copy{
       color:var(--muted);
-      margin-top:0;
     }
 
-    .copy strong{
+    .founder-copy p:first-child{margin-top:0}
+
+    .founder-copy strong{
       display:block;
-      color:var(--black);
       margin-top:24px;
-      margin-bottom:6px;
+      margin-bottom:5px;
+      color:var(--black);
     }
 
     .video-grid{
@@ -236,42 +254,50 @@
     }
 
     .video-card{
-      min-height:430px;
-      border-radius:26px;
-      overflow:hidden;
-      position:relative;
-      background-size:cover;
-      background-position:center;
+      min-height:220px;
+      padding:28px;
+      border:1px solid #ebe3db;
+      border-radius:var(--radius);
+      background:rgba(252,250,247,.74);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
 
-    .video-card.one{
-      background-image:
-      linear-gradient(180deg,transparent 48%,rgba(0,0,0,.72)),
-      url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1800&q=95');
+    .video-top{
+      display:flex;
+      align-items:center;
+      gap:18px;
     }
 
-    .video-card.two{
-      background-image:
-      linear-gradient(180deg,transparent 48%,rgba(0,0,0,.72)),
-      url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1800&q=95');
+    .video-icon{
+      width:48px;
+      height:48px;
+      border:2px solid var(--black);
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.35rem;
+      flex:0 0 48px;
     }
 
-    .video-copy{
-      position:absolute;
-      left:26px;
-      right:26px;
-      bottom:24px;
-      color:#fff;
+    .video-card h3{
+      font-size:1.3rem;
+      margin-bottom:5px;
     }
 
-    .video-copy h3{
-      font-size:1.65rem;
-      margin-bottom:8px;
-    }
-
-    .video-copy p{
+    .video-card p{
       margin:0;
-      color:#e9e9e9;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .video-card a{
+      font-size:.9rem;
+      font-weight:600;
+      text-decoration:underline;
+      text-underline-offset:4px;
     }
 
     .compliance{
@@ -279,103 +305,175 @@
       border-bottom:1px solid var(--line);
     }
 
-    .compliance-box{
+    .compliance-grid{
       display:grid;
-      grid-template-columns:.8fr 1.2fr;
-      gap:70px;
+      grid-template-columns:.85fr 1.15fr;
+      gap:80px;
+      align-items:start;
     }
 
     .compliance h2{
-      font-size:clamp(2.4rem,4vw,4.2rem);
+      max-width:460px;
+      font-size:clamp(2.6rem,4.5vw,4.6rem);
     }
 
-    .compliance ul{
-      list-style:none;
-      padding:0;
-      margin:0;
+    .check-list{
       display:grid;
-      gap:14px;
     }
 
-    .compliance li{
-      padding-bottom:14px;
+    .check-row{
+      display:grid;
+      grid-template-columns:28px 1fr;
+      gap:16px;
+      align-items:center;
+      padding:15px 0;
       border-bottom:1px solid var(--line);
-      color:#333;
     }
 
-    .note{
+    .check{
+      width:22px;
+      height:22px;
+      border:1px solid #6f6f6f;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:.75rem;
+    }
+
+    .legal{
       margin-top:22px;
-      font-size:.88rem;
-      color:#888;
+      color:#8a8a8a;
+      font-size:.82rem;
+      line-height:1.5;
     }
 
-    .cta{
-      padding:110px 0;
+    .contact{
       text-align:center;
     }
 
-    .cta h2{
-      font-size:clamp(2.7rem,5vw,5.3rem);
-      max-width:900px;
+    .contact h2{
+      max-width:920px;
       margin:auto;
+      font-size:clamp(2.9rem,5vw,5.6rem);
     }
 
-    .cta p{
-      color:var(--muted);
+    .contact-copy{
       max-width:650px;
-      margin:22px auto 30px;
+      margin:20px auto 32px;
+      color:var(--muted);
+    }
+
+    .form-card{
+      max-width:780px;
+      margin:42px auto 0;
+      padding:30px;
+      border:1px solid #e7dfd7;
+      border-radius:var(--radius);
+      background:rgba(252,250,247,.82);
+      text-align:left;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .field.full{grid-column:1/-1}
+
+    label{
+      display:block;
+      margin-bottom:7px;
+      font-size:.76rem;
+      font-weight:700;
+    }
+
+    input,textarea{
+      width:100%;
+      padding:14px;
+      border:1px solid #e8e1da;
+      border-radius:8px;
+      background:#fff;
+      color:var(--black);
+      outline:none;
+    }
+
+    input:focus,textarea:focus{border-color:#a9a19a}
+    textarea{min-height:120px;resize:vertical}
+
+    .submit{
+      width:100%;
+      margin-top:18px;
+    }
+
+    .form-note{
+      margin-top:12px;
+      color:#909090;
+      font-size:.75rem;
+      text-align:center;
     }
 
     footer{
+      padding:38px 0;
       border-top:1px solid var(--line);
-      padding:40px 0;
     }
 
-    .footer-inner{
+    .footer{
       display:flex;
       justify-content:space-between;
       gap:20px;
       flex-wrap:wrap;
-      color:#777;
-      font-size:.9rem;
+      color:#7f7f7f;
+      font-size:.84rem;
+    }
+
+    .footer .logo{
+      color:var(--black);
+      font-size:.95rem;
     }
 
     @media(max-width:920px){
-      .hero-grid,.split,.video-grid,.compliance-box{
-        grid-template-columns:1fr;
-      }
-      .grid-3{
-        grid-template-columns:1fr;
-      }
-      .hero-image{
-        min-height:480px;
-      }
-      nav a:not(.btn){
-        display:none;
+      nav a:not(.btn){display:none}
+      .hero-grid,.founder-card,.compliance-grid{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr 1fr}
+      .video-grid{grid-template-columns:1fr}
+      .hero-note{
+        padding-left:0;
+        border-left:none;
+        border-top:1px solid var(--line);
+        padding-top:24px;
       }
     }
 
     @media(max-width:640px){
-      .hero{padding-top:56px}
+      .nav{height:68px}
+      .container{width:min(94%,1180px)}
+      .hero{padding:62px 0 52px}
       section{padding:72px 0}
-      .hero-image{min-height:390px}
-      .hero-actions{flex-direction:column}
+      .services,.form-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      .hero-actions{flex-direction:column;align-items:stretch}
       .btn{width:100%}
-      .text-link{justify-content:center}
+      .text-link{text-align:center}
+      .founder-card{padding:28px}
+      .form-card{padding:20px}
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="container nav">
-    <a class="logo" href="#">GettingBooked</a>
+    <a href="#" class="logo">GettingBooked</a>
+
     <nav>
       <a href="#services">Services</a>
-      <a href="#science">Why Us</a>
+      <a href="#why-us">Why Us</a>
       <a href="#video">Video</a>
       <a href="#compliance">Compliance</a>
-      <a class="btn" href="#contact">Book a Call</a>
+      <a href="#contact" class="btn">Book a Call</a>
     </nav>
   </div>
 </header>
@@ -386,19 +484,27 @@
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">For longevity clinics</div>
-        <h1>Clear marketing. More booked consultations.</h1>
-        <p>Websites, AI follow-up, search, video, and patient education—built for modern longevity clinics.</p>
+
+        <h1>Clear marketing.<br>More booked consultations.</h1>
+
+        <p class="hero-copy">
+          Websites, AI follow-up, search, video, and patient education—built for modern longevity clinics.
+        </p>
+
         <div class="hero-actions">
-          <a class="btn" href="#contact">Get a Free Audit</a>
-          <a class="text-link" href="#services">See what we do</a>
+          <a href="#contact" class="btn">Get a Free Audit</a>
+          <a href="#services" class="text-link">See what we do →</a>
         </div>
       </div>
-      <div class="hero-image" role="img" aria-label="Modern longevity clinic consultation"></div>
+
+      <div class="hero-note">
+        We help longevity clinics build trust, educate patients, and grow consultations with systems that work.
+      </div>
     </div>
   </section>
 
-  <div class="strip">
-    <div class="container strip-inner">
+  <div class="specialties">
+    <div class="container specialty-list">
       <span>HRT</span>
       <span>Peptides</span>
       <span>IV Therapy</span>
@@ -416,28 +522,39 @@
         <p>Everything works together to help patients find you, trust you, and book.</p>
       </div>
 
-      <div class="grid-3">
-        <article class="card">
+      <div class="services">
+        <article class="service">
+          <div class="service-icon">◎</div>
           <h3>Website</h3>
-          <p>Clean, modern, and built to convert.</p>
+          <p>Clean, modern, and built to convert visitors into patients.</p>
         </article>
-        <article class="card">
+
+        <article class="service">
+          <div class="service-icon">◌</div>
           <h3>AI Follow-Up</h3>
-          <p>Calls, chat, text, and appointment support.</p>
+          <p>Calls, chat, text, and appointment support—24/7.</p>
         </article>
-        <article class="card">
+
+        <article class="service">
+          <div class="service-icon">⌕</div>
           <h3>Google</h3>
           <p>Ads and SEO for high-intent patients.</p>
         </article>
-        <article class="card">
+
+        <article class="service">
+          <div class="service-icon">▣</div>
           <h3>Instagram</h3>
-          <p>Short videos that build trust quickly.</p>
+          <p>Short videos that build trust and drive bookings.</p>
         </article>
-        <article class="card">
+
+        <article class="service">
+          <div class="service-icon">▶</div>
           <h3>YouTube</h3>
-          <p>Long-form patient education and authority.</p>
+          <p>Long-form patient education that builds authority.</p>
         </article>
-        <article class="card">
+
+        <article class="service">
+          <div class="service-icon">○</div>
           <h3>CRM</h3>
           <p>Follow-up, reminders, reviews, and reactivation.</p>
         </article>
@@ -445,13 +562,21 @@
     </div>
   </section>
 
-  <section id="science" class="feature">
-    <div class="container split">
-      <p class="quote">Your clinic should not have to teach its marketing agency what longevity medicine is.</p>
-      <div class="copy">
-        <p>GettingBooked was founded by a biotechnology professional with experience in biologics and advanced therapeutics.</p>
+  <section id="why-us">
+    <div class="container founder-card">
+      <div>
+        <h2>Your clinic should not have to teach its marketing agency what longevity medicine is.</h2>
+      </div>
+
+      <div class="founder-copy">
+        <p>
+          GettingBooked was founded by a biotechnology professional with experience
+          in biologics and advanced therapeutics.
+        </p>
+
         <strong>We understand the science.</strong>
         <p>We turn complex treatments into clear patient education.</p>
+
         <strong>We understand the responsibility.</strong>
         <p>Accuracy, trust, and compliance matter in healthcare marketing.</p>
       </div>
@@ -466,53 +591,113 @@
       </div>
 
       <div class="video-grid">
-        <div class="video-card one">
-          <div class="video-copy">
-            <h3>Instagram Reels</h3>
-            <p>Short, clear, educational content.</p>
+        <article class="video-card">
+          <div class="video-top">
+            <div class="video-icon">▣</div>
+            <div>
+              <h3>Instagram Reels</h3>
+              <p>Short, clear, educational content that builds trust quickly.</p>
+            </div>
           </div>
-        </div>
-        <div class="video-card two">
-          <div class="video-copy">
-            <h3>YouTube</h3>
-            <p>Long-form education that builds authority.</p>
+
+          <a href="#contact">Learn more →</a>
+        </article>
+
+        <article class="video-card">
+          <div class="video-top">
+            <div class="video-icon">▶</div>
+            <div>
+              <h3>YouTube</h3>
+              <p>Long-form education that builds authority.</p>
+            </div>
           </div>
-        </div>
+
+          <a href="#contact">Learn more →</a>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="compliance" class="compliance">
-    <div class="container compliance-box">
+    <div class="container compliance-grid">
       <div>
         <div class="eyebrow">Compliance</div>
         <h2>Healthcare marketing needs more care.</h2>
       </div>
+
       <div>
-        <ul>
-          <li>Clear educational messaging</li>
-          <li>No exaggerated promises</li>
-          <li>Responsible treatment descriptions</li>
-          <li>Content ready for clinic review</li>
-        </ul>
-        <p class="note">GettingBooked provides marketing support, not legal advice. Final approval remains with the clinic and its qualified advisors.</p>
+        <div class="check-list">
+          <div class="check-row">
+            <div class="check">✓</div>
+            <div>Clear educational messaging</div>
+          </div>
+
+          <div class="check-row">
+            <div class="check">✓</div>
+            <div>No exaggerated promises</div>
+          </div>
+
+          <div class="check-row">
+            <div class="check">✓</div>
+            <div>Responsible treatment descriptions</div>
+          </div>
+
+          <div class="check-row">
+            <div class="check">✓</div>
+            <div>Content ready for clinic review</div>
+          </div>
+        </div>
+
+        <p class="legal">
+          GettingBooked provides marketing support, not legal advice.
+          Final approval remains with the clinic and its qualified advisors.
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="cta">
+  <section id="contact" class="contact">
     <div class="container">
       <h2>Make your expertise easier to see.</h2>
-      <p>Start with a free review of your website, follow-up, search visibility, and patient experience.</p>
-      <a class="btn" href="mailto:hello@gettingbooked.net">Book a Free Audit</a>
+
+      <p class="contact-copy">
+        Start with a free review of your website, follow-up, search visibility, and patient experience.
+      </p>
+
+      <form class="form-card" action="mailto:hello@gettingbooked.net" method="post" enctype="text/plain">
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="Name" type="text" placeholder="Your name" required>
+          </div>
+
+          <div class="field">
+            <label for="clinic">Clinic name</label>
+            <input id="clinic" name="Clinic" type="text" placeholder="Clinic or practice" required>
+          </div>
+
+          <div class="field full">
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" placeholder="you@clinic.com" required>
+          </div>
+
+          <div class="field full">
+            <label for="message">What would you like reviewed?</label>
+            <textarea id="message" name="Message" placeholder="Tell us about your clinic and goals..."></textarea>
+          </div>
+        </div>
+
+        <button class="btn submit" type="submit">Request Free Audit →</button>
+        <div class="form-note">We'll respond within one business day. No commitment required.</div>
+      </form>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <div class="container footer-inner">
-    <span>GettingBooked</span>
+  <div class="container footer">
+    <span class="logo">GettingBooked</span>
     <span>Growth for longevity clinics</span>
     <span>© 2026</span>
   </div>
