@@ -13,8 +13,20 @@ a{color:inherit}.nav{height:84px;border-bottom:1px solid var(--line);display:fle
 .strip{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}.seo{border-left:4px solid var(--platinum);padding-left:24px;font-size:18px}.cta{text-align:center;background:var(--ink);color:#fff;padding:72px 8vw}.cta h2{color:#fff}.cta p{max-width:650px;margin:0 auto 28px;color:#E4E5E6;font-size:19px}.cta .btn{background:#fff;color:var(--ink)}
 .footer{padding:34px 8vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:14px}
 @media(max-width:760px){.navlinks{display:none}.hero{padding:68px 7vw}.section{padding:58px 7vw}.grid,.strip{grid-template-columns:1fr}.hero h1{letter-spacing:-1px}.footer{display:block}}
+
+/* Stronger hover state for Services and Compliance */
+.navlinks a{transition:color .18s ease,background .18s ease}
+.navlinks a:hover{color:#000}
+.navlinks a[href*="service"]:hover,
+.navlinks a[href*="compliance"]:hover,
+.navlinks a[href="#services"]:hover,
+.navlinks a[href="#compliance"]:hover{
+  color:#000;
+  background:#E2E3E5;
+  border-radius:8px;
+}
 </style></head><body><header class="nav"><a class="brand" href="index.html">GettingBooked<span>.net</span></a><nav class="navlinks">
-<a href="index.html#services">Services</a><a href="index.html#why">Why Us</a><a href="index.html#science">Science</a><a href="index.html#compliance">Compliance</a></nav><a class="btn" href="index.html#contact">Book a Call</a></header>
+<a href="index.html#services">Services</a><a href="index.html#why">Why Us</a><a href="index.html#science">Science</a><a href="compliance.html">Compliance</a></nav><a class="btn" href="index.html#contact">Book a Call</a></header>
 <main>
 <section class="hero"><div class="wrap"><p class="eyebrow">24/7 LEAD RESPONSE</p><h1>Every missed call can be a missed patient.</h1><p class="lead">AI phone and chat support that responds quickly, captures intent, and moves qualified inquiries toward your team.</p><a class="btn" href="index.html#contact">Get a Free Growth Audit →</a></div></section>
 <section class="section"><div class="wrap"><h2>What matters most.</h2><p class="intro">High-intent prospects often contact more than one clinic. Fast, consistent response protects the demand you already paid to generate.</p><div class="grid"><article class="card"><b>01</b><h3>Answer Fast</h3><p>Respond after hours, during busy periods, and when staff cannot pick up.</p></article><article class="card"><b>02</b><h3>Capture Intent</h3><p>Collect the reason for inquiry and the service the prospect wants.</p></article><article class="card"><b>03</b><h3>Route Correctly</h3><p>Direct qualified opportunities to the right next step.</p></article><article class="card"><b>04</b><h3>Stay On-Message</h3><p>Use clinic-approved information and clear escalation rules.</p></article></div></div></section>

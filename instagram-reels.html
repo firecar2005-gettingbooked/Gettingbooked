@@ -13,8 +13,20 @@ a{color:inherit}.nav{height:84px;border-bottom:1px solid var(--line);display:fle
 .strip{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}.seo{border-left:4px solid var(--platinum);padding-left:24px;font-size:18px}.cta{text-align:center;background:var(--ink);color:#fff;padding:72px 8vw}.cta h2{color:#fff}.cta p{max-width:650px;margin:0 auto 28px;color:#E4E5E6;font-size:19px}.cta .btn{background:#fff;color:var(--ink)}
 .footer{padding:34px 8vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:14px}
 @media(max-width:760px){.navlinks{display:none}.hero{padding:68px 7vw}.section{padding:58px 7vw}.grid,.strip{grid-template-columns:1fr}.hero h1{letter-spacing:-1px}.footer{display:block}}
+
+/* Stronger hover state for Services and Compliance */
+.navlinks a{transition:color .18s ease,background .18s ease}
+.navlinks a:hover{color:#000}
+.navlinks a[href*="service"]:hover,
+.navlinks a[href*="compliance"]:hover,
+.navlinks a[href="#services"]:hover,
+.navlinks a[href="#compliance"]:hover{
+  color:#000;
+  background:#E2E3E5;
+  border-radius:8px;
+}
 </style></head><body><header class="nav"><a class="brand" href="index.html">GettingBooked<span>.net</span></a><nav class="navlinks">
-<a href="index.html#services">Services</a><a href="index.html#why">Why Us</a><a href="index.html#science">Science</a><a href="index.html#compliance">Compliance</a></nav><a class="btn" href="index.html#contact">Book a Call</a></header>
+<a href="index.html#services">Services</a><a href="index.html#why">Why Us</a><a href="index.html#science">Science</a><a href="compliance.html">Compliance</a></nav><a class="btn" href="index.html#contact">Book a Call</a></header>
 <main>
 <section class="hero"><div class="wrap"><p class="eyebrow">SHORT-FORM AUTHORITY</p><h1>Make your expertise easy to understand—and easy to remember.</h1><p class="lead">Short videos that turn complex longevity topics into useful patient education without sounding generic.</p><a class="btn" href="index.html#contact">Get a Free Growth Audit →</a></div></section>
 <section class="section"><div class="wrap"><h2>What matters most.</h2><p class="intro">Patients may not be ready to book the first time they see you. Consistent education keeps your clinic familiar and credible.</p><div class="grid"><article class="card"><b>01</b><h3>Strong Hooks</h3><p>Lead with the patient question, misconception, or decision that matters.</p></article><article class="card"><b>02</b><h3>Simple Science</h3><p>Translate complex concepts without stripping away credibility.</p></article><article class="card"><b>03</b><h3>Doctor-Led Authority</h3><p>Make clinical expertise the center of the content.</p></article><article class="card"><b>04</b><h3>Reusable Content</h3><p>Build a library that supports social, website, email, and follow-up.</p></article></div></div></section>

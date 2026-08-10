@@ -398,7 +398,19 @@
           flex-wrap: wrap;
         }
       }
-    </style>
+    
+/* Stronger hover state for Services and Compliance */
+.navlinks a{transition:color .18s ease,background .18s ease}
+.navlinks a:hover{color:#000}
+.navlinks a[href*="service"]:hover,
+.navlinks a[href*="compliance"]:hover,
+.navlinks a[href="#services"]:hover,
+.navlinks a[href="#compliance"]:hover{
+  color:#000;
+  background:#E2E3E5;
+  border-radius:8px;
+}
+</style>
   </head>
   <body>
     <header>

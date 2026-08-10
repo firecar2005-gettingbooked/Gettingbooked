@@ -13,8 +13,20 @@ a{color:inherit}.nav{height:84px;border-bottom:1px solid var(--line);display:fle
 .strip{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}.seo{border-left:4px solid var(--platinum);padding-left:24px;font-size:18px}.cta{text-align:center;background:var(--ink);color:#fff;padding:72px 8vw}.cta h2{color:#fff}.cta p{max-width:650px;margin:0 auto 28px;color:#E4E5E6;font-size:19px}.cta .btn{background:#fff;color:var(--ink)}
 .footer{padding:34px 8vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:14px}
 @media(max-width:760px){.navlinks{display:none}.hero{padding:68px 7vw}.section{padding:58px 7vw}.grid,.strip{grid-template-columns:1fr}.hero h1{letter-spacing:-1px}.footer{display:block}}
+
+/* Stronger hover state for Services and Compliance */
+.navlinks a{transition:color .18s ease,background .18s ease}
+.navlinks a:hover{color:#000}
+.navlinks a[href*="service"]:hover,
+.navlinks a[href*="compliance"]:hover,
+.navlinks a[href="#services"]:hover,
+.navlinks a[href="#compliance"]:hover{
+  color:#000;
+  background:#E2E3E5;
+  border-radius:8px;
+}
 </style></head><body><header class="nav"><a class="brand" href="index.html">GettingBooked<span>.net</span></a><nav class="navlinks">
-<a href="index.html#services">Services</a><a href="index.html#why">Why Us</a><a href="index.html#science">Science</a><a href="index.html#compliance">Compliance</a></nav><a class="btn" href="index.html#contact">Book a Call</a></header>
+<a href="index.html#services">Services</a><a href="index.html#why">Why Us</a><a href="index.html#science">Science</a><a href="compliance.html">Compliance</a></nav><a class="btn" href="index.html#contact">Book a Call</a></header>
 <main>
 <section class="hero"><div class="wrap"><p class="eyebrow">WEBSITE STRATEGY</p><h1>Your website should turn expertise into trust.</h1><p class="lead">A premium, conversion-focused website built for longevity clinics—not a generic medical template.</p><a class="btn" href="index.html#contact">Get a Free Growth Audit →</a></div></section>
 <section class="section"><div class="wrap"><h2>What matters most.</h2><p class="intro">Patients judge credibility before they call. Your website must make advanced care feel clear, professional, and trustworthy.</p><div class="grid"><article class="card"><b>01</b><h3>Clear Positioning</h3><p>Explain what makes your clinic different in seconds.</p></article><article class="card"><b>02</b><h3>Treatment Pages</h3><p>Give every core service a focused page built around patient intent.</p></article><article class="card"><b>03</b><h3>Conversion Path</h3><p>Make calling, booking, and requesting a consultation effortless.</p></article><article class="card"><b>04</b><h3>Trust First</h3><p>Use clinician expertise, education, proof, and responsible messaging.</p></article></div></div></section>
